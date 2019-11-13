@@ -20,11 +20,15 @@ library(fivethirtyeight)
 
 Text:
 
+I got a sample proportion of 0.34
+
 
 
 3) Uncheck "Animate". Draw 50 more samples. What is the mean of the sample proportions? What is the standard deviation?
 
 Text:
+
+The mean was 0.382, and the standard deviation was 0.071.
 
 
 
@@ -32,10 +36,13 @@ Text:
 
 Code (for use as calculator):
 ```{r}
-
+p <- 0.4
+sd <- sqrt(p * (1 - p) / 50)
+sd
 ```
 
 Text:
+The mean should be 0.4.
 
 
 
@@ -43,12 +50,25 @@ Text:
 
 Code:
 ```{r}
+p.hat <- 0.56
 
+z <- (p.hat - 0.4) / sqrt(0.4 * (1 - 0.4) / 50)
+z
+
+z.crit <- qnorm(0.95) 
+z.crit
+
+pvalue <- 1 - pnorm(z)
+pvalue
 ```
 
 Text:
 
+$H_0: p \le 0.4$
 
+$H_A: p > 0.4$
+
+Because $Z = 2.31 > Z^* = 1.64$, we have sufficient evidence to conclude that we can reject the null hypothesis, and $p$ is greater than 0.4.
 \newpage
 
 ## On Your Own, In Groups
