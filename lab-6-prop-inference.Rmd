@@ -1,6 +1,7 @@
 ---
 title: 'Lab: Statistical Inference of Proportions'
-author: 'Mary Ryan'
+subtitle: "75694189 16257626 13341225"
+author: "Chen Wang, Junke Wang, Zhuozhi Xiong"
 date: "due 11/13 at end of discussion"
 output: pdf_document
 urlcolor: blue
