@@ -102,27 +102,48 @@ a) Calculate a 95% confidence interval for the proportion of women affiliated wi
 
 Code:
 ```{r}
-
+p = 0.29
+sd = sqrt(p * (1 - p) / 1017)
+critic = qnorm((1 - 0.95) / 2)
+p - critic * sd
+p + critic * sd
 ```
 
 Text:
 
+The confidence interval is (0.2621121, 0.3178879).
 
+We have 95% confidence that the proportion of women affiliated with GWC who had negative internship applications experiences is between 26.2% and 31.7%.
 
 b) Conduct a hypothesis test to evaluate whether the proportion is larger than 20%.
 
 Code:
 ```{r}
+p.hat <- 0.29
 
+z <- (p.hat - 0.2) / sqrt(0.2 * (1 - 0.2) / 1017)
+z
+
+z.crit <- qnorm(0.95) 
+z.crit
+
+pvalue <- 1 - pnorm(z)
+pvalue
 ```
 
 Text:
 
+$H_0: p \le 0.2$
+
+$H_A: p > 0.2$
+
+Because $Z = 7.17 > Z^* = 1.64$, we have sufficient evidence to conclude that we can reject the null hypothesis, and $p$ is greater than 0.2.
 
 c) Do your answers for (a) and (b) agree with each other?
 
 Text:
 
+Yes. In part (a), we have 95% confidence that the proportion is between 26.2% and 31.7% and this is true that the number is greater than 20%, which is indicated in part (b).
 
 \newpage
 
