@@ -80,12 +80,18 @@ a) Calculate an 85% confidence interval for the proportion of colleges/universit
 
 Code:
 ```{r}
-
+p = 0.533
+sd = sqrt(p * (1 - p) / 1364)
+critic = qnorm((1 - 0.85) / 2)
+p - critic * sd
+p + critic * sd
 ```
 
 Text:
 
+The confidence interval is (0.5135537, 0.5524463).
 
+We have 85% confidence that the proportion of colleges/universities that admitted at least two-thirds of their applicants in 2017 is between 51.3% and 55.2%.
 
 
 \newpage
