@@ -1759,12 +1759,34 @@ pvalue</code></pre>
 <li>What is the estimated difference in proportions of elevated AB levels between those who have no APOE e4 alleles, and those who have at least 1 APOE e4 allele? What is the standard error?</li>
 </ol>
 <p>Code:</p>
+<pre class="r"><code>n1 = 53 + 182
+n2 = 47 + 53
+p1 = 53 / n1
+p2 = 47 / n2
+p1 - p2</code></pre>
+<pre><code>## [1] -0.2444681</code></pre>
+<pre class="r"><code>sd = sqrt(p1 * (1 - p1) / n1 + p2 * (1 - p2) / n2)
+sd</code></pre>
+<pre><code>## [1] 0.0568706</code></pre>
 <p>Text:</p>
+<p>The estimated difference is -0.24.</p>
+<p>The standard error is 0.05</p>
 <ol start="2" style="list-style-type: lower-alpha">
 <li>Conduct a hypothesis test for whether this difference in proportions is equal to 0.</li>
 </ol>
 <p>Code:</p>
+<pre class="r"><code>p.hat &lt;- -0.24
+
+z &lt;- (p.hat - 0) / sd
+z</code></pre>
+<pre><code>## [1] -4.220107</code></pre>
+<pre class="r"><code>z.crit &lt;- qnorm(0.05) 
+z.crit</code></pre>
+<pre><code>## [1] -1.644854</code></pre>
 <p>Text:</p>
+<p><span class="math inline">\(H_0: p_1 - p_2 = 0\)</span></p>
+<p><span class="math inline">\(H_A: p_1 - p_2 \ne 0\)</span></p>
+<p>Because <span class="math inline">\(Z = -4.2 &lt; Z^* = -1.6\)</span>, we have sufficient evidence to conclude that we can reject the null hypothesis, and <span class="math inline">\(p_1 - p_2 \ne 0\)</span>.</p>
 <div style="page-break-after: always;"></div>
 <ol start="2" style="list-style-type: decimal">
 <li>Below are results from a FiveThirtyEight survey about people’s opinions of the Oxford (or serial) comma. Answers on the left correspond to the question “How much, if at all, do you care about the debate over the use of the word ‘data’ as a singular or plural noun?”. Answers on the top correspond to the question “How much, if at all, do you care about the use (or lack thereof) of the serial (or Oxford) comma in grammar?”</li>
