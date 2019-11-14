@@ -43,7 +43,8 @@ sd
 ```
 
 Text:
-The mean should be 0.4.
+The mean should be 0.4.   
+The standard error should be 0.06928203.
 
 
 
@@ -65,7 +66,7 @@ pvalue
 
 Text:
 
-$H_0: p \le 0.4$
+$H_0: p = 0.4$
 
 $H_A: p > 0.4$
 
