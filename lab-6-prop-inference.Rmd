@@ -164,25 +164,44 @@ a) What is the estimated difference in proportions of elevated AB levels between
 
 Code:
 ```{r}
-
+n1 = 53 + 182
+n2 = 47 + 53
+p1 = 53 / n1
+p2 = 47 / n2
+p1 - p2
+sd = sqrt(p1 * (1 - p1) / n1 + p2 * (1 - p2) / n2)
+sd
 ```
 
 
 Text:
 
+The estimated difference is -0.24.
+
+The standard error is 0.05
 
 
 b) Conduct a hypothesis test for whether this difference in proportions is equal to 0.
 
 Code:
 ```{r}
+p.hat <- -0.24
 
+z <- (p.hat - 0) / sd
+z
+
+z.crit <- qnorm(0.05) 
+z.crit
 ```
 
 
 Text:
 
+$H_0: p_1 - p_2 = 0$
 
+$H_A: p_1 - p_2 \ne 0$
+
+Because $Z = -4.2 < Z^* = -1.6$, we have sufficient evidence to conclude that we can reject the null hypothesis, and $p_1 - p_2 \ne 0$.
 
 \newpage
 
